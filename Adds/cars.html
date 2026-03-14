@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Solutions - Aatan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root { --primary-color: #ffc107; --dark-bg: #121212; --card-bg: #1e1e1e; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark-bg); color: #ffffff; }
+        
+        .hero-ev {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1400');
+            background-size: cover; background-position: center; padding: 120px 0; border-bottom: 4px solid var(--primary-color);
+        }
+
+        .service-card {
+            background: var(--card-bg); border: 1px solid #333; border-radius: 15px; padding: 25px;
+            transition: 0.4s; height: 100%;
+        }
+        .service-card:hover { border-color: var(--primary-color); transform: translateY(-10px); }
+        .icon-circle { 
+            width: 60px; height: 60px; background: var(--primary-color); color: #000; 
+            display: flex; align-items: center; justify-content: center; border-radius: 50%; 
+            font-size: 1.5rem; margin-bottom: 20px;
+        }
+
+        .app-item { background: #252525; padding: 15px; border-radius: 10px; margin-bottom: 10px; display: flex; align-items: center; }
+        .app-item i { color: var(--primary-color); margin-right: 15px; }
+
+        .commitment-section { background: var(--primary-color); color: #000; border-radius: 30px; padding: 50px; }
+    </style>
+</head>
+<body>
+
+    <header class="hero-ev text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-warning mb-4">EV Charging Solutions</h1>
+            <p class="lead fs-4 opacity-75 mx-auto" style="max-width: 850px;">
+                Aatan General Contracting provides professional solutions for the supply, installation, and commissioning of Electric Vehicle (EV) charging stations for residential, commercial, and infrastructure projects.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Our EV <span class="text-warning">Charging Services</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="bi bi-ev-station"></i></div>
+                        <h5>AC EV Chargers</h5>
+                        <p class="small opacity-75">Supply and installation for residential buildings, parking areas, and commercial facilities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <h5>DC Fast Chargers</h5>
+                        <p class="small opacity-75">For public stations and high-traffic locations requiring rapid charging solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="bi bi-cpu"></i></div>
+                        <h5>Infrastructure Prep</h5>
+                        <p class="small opacity-75">Cable routing, protection systems, distribution boards, and smart power management.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="bi bi-pencil-square"></i></div>
+                        <h5>Site Assessment</h5>
+                        <p class="small opacity-75">System design to ensure optimal charger placement, safety, and peak performance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="bi bi-shield-check"></i></div>
+                        <h5>Testing & Commissioning</h5>
+                        <p class="small opacity-75">Full system testing according to international and local technical standards.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-circle"><i class="bi bi-tools"></i></div>
+                        <h5>Technical Support</h5>
+                        <p class="small opacity-75">Long-term maintenance and reliability support for all installed systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark-soft" style="background: #181818;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Where We <span class="text-warning">Implement</span></h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="app-item"><i class="bi bi-house-door"></i> Residential Compounds</div>
+                            <div class="app-item"><i class="bi bi-bag"></i> Shopping Centers</div>
+                            <div class="app-item"><i class="bi bi-building"></i> Office Buildings</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="app-item"><i class="bi bi-p-square"></i> Public Parking</div>
+                            <div class="app-item"><i class="bi bi-fuel-pump"></i> Fuel Stations</div>
+                            <div class="app-item"><i class="bi bi-broadcast-pin"></i> Smart Cities</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=800" class="img-fluid rounded-4 shadow-lg" alt="EV Applications">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="commitment-section shadow-lg">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-4">Our Commitment in EV Solutions</h2>
+                        <ul class="list-unstyled fs-5">
+                            <li class="mb-2"><i class="bi bi-patch-check-fill me-2"></i> High-quality and reliable charging equipment</li>
+                            <li class="mb-2"><i class="bi bi-patch-check-fill me-2"></i> Compliance with international electrical standards</li>
+                            <li class="mb-2"><i class="bi bi-patch-check-fill me-2"></i> Professional installation by qualified engineers</li>
+                            <li><i class="bi bi-patch-check-fill me-2"></i> Efficient and scalable solutions for future expansion</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 text-center d-none d-lg-block">
+                        <i class="bi bi-shield-fill-check" style="font-size: 8rem; opacity: 0.2;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-secondary">
+        <p class="mb-0 opacity-50">&copy; 2026 Aatan General Contracting. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Services - Aatan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root { --primary-color: #ffc107; --dark-bg: #121212; --card-bg: #1e1e1e; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark-bg); color: #ffffff; }
+        
+        .hero-maintenance {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1581094288338-2314dddb79a.jpeg?q=80&w=1400');
+            background-size: cover; background-position: center; padding: 100px 0; border-bottom: 4px solid var(--primary-color);
+        }
+
+        .m-card {
+            background: var(--card-bg); border: none; border-radius: 20px; padding: 30px;
+            transition: 0.3s; position: relative; overflow: hidden; height: 100%;
+        }
+        .m-card:hover { transform: translateY(-10px); background: #252525; }
+        .m-card::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--primary-color);
+        }
+
+        .icon-box { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; }
+
+        .team-highlight {
+            background-color: #ffc107; color: #000; border-radius: 15px; padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-maintenance text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-warning mb-4">Maintenance Services</h1>
+            <p class="lead fs-4 opacity-75 mx-auto" style="max-width: 900px;">
+                Aatan General Contracting provides professional maintenance services for electrical systems and infrastructure projects to ensure safe and reliable operation.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="m-card shadow-sm">
+                        <div class="icon-box"><i class="bi bi-search"></i></div>
+                        <h5 class="fw-bold">Inspection</h5>
+                        <p class="small opacity-75">Thorough troubleshooting and assessment of electrical components.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="m-card shadow-sm">
+                        <div class="icon-box"><i class="bi bi-tools"></i></div>
+                        <h5 class="fw-bold">Repair</h5>
+                        <p class="small opacity-75">Efficient repair and replacement of lighting, cables, and panels.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="m-card shadow-sm">
+                        <div class="icon-box"><i class="bi bi-shield-shaded"></i></div>
+                        <h5 class="fw-bold">Preventive</h5>
+                        <p class="small opacity-75">Scheduled maintenance to improve performance and extend system lifespan.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="m-card shadow-sm">
+                        <div class="icon-box"><i class="bi bi-lightning-fill"></i></div>
+                        <h5 class="fw-bold">Corrective</h5>
+                        <p class="small opacity-75">Rapid response to restore system functionality and safety.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark" style="background: #181818;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800" class="img-fluid rounded-4 shadow-lg" alt="Maintenance Team">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Why Choose Our <span class="text-warning">Maintenance</span>?</h2>
+                    <p class="fs-5 opacity-75 mb-4">
+                        Our services cover all essential electrical installations, including lighting systems, underground cables, and distribution panels. We ensure everything meets approved engineering standards.
+                    </p>
+                    <div class="team-highlight d-flex align-items-center shadow">
+                        <i class="bi bi-people-fill fs-1 me-4"></i>
+                        <div>
+                            <h4 class="fw-bold mb-1">Qualified Technical Team</h4>
+                            <p class="mb-0">Ensuring all works are carried out efficiently and safely.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-center">
+        <div class="container py-4">
+            <h3 class="fw-bold text-warning mb-3">Approved Engineering Standards</h3>
+            <p class="lead opacity-50 mx-auto" style="max-width: 800px;">
+                We focus on high-quality delivery to improve system performance and guarantee the safety of every installation we maintain.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center border-top border-secondary">
+        <p class="mb-0 opacity-50">&copy; 2026 Aatan General Contracting. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
