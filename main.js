@@ -30,8 +30,10 @@ const translations = {
         serv3T: "المقاولات العامة",
         commitTitle: "التزامنا",
         contactTitle: "تواصل معنا",
-        projectsTitle: "مشاريعنا على الطبيعة",
+        projectsTitle: "مشاريعنا",
         projectsSub: "فخورون بتنفيذ أضخم المشاريع بأعلى معايير الجودة",
+        infraTitle: "أعمال البنية التحتية المتكاملة",
+        contractTitle: "أعمال المقاولات العامة",
         viewDetails: "عرض التفاصيل",
         saudiArabia: "المملكة العربية السعودية",
         testiTitle: "قالوا عن أعتان",
@@ -64,8 +66,10 @@ const translations = {
         serv3T: "General Contracting",
         commitTitle: "Our Commitment",
         contactTitle: "Contact Us",
-        projectsTitle: "Our Live Projects",
+        projectsTitle: "Our Projects",
         projectsSub: "Proudly executing major projects with the highest quality standards",
+        infraTitle: "Integrated Infrastructure Works",
+        contractTitle: "General Contracting Works",
         viewDetails: "View Details",
         saudiArabia: "Saudi Arabia",
         testiTitle: "Testimonials",
@@ -76,16 +80,14 @@ const translations = {
     }
 };
 
-// 3. دالة تبديل اللغة (تحديث النصوص والاتجاهات)
+// 3. دالة تبديل اللغة
 function toggleLanguage() {
     currentLang = currentLang === 'ar' ? 'en' : 'ar';
     const t = translations[currentLang];
 
-    // تغيير الاتجاه واللغة
     document.documentElement.dir = t.dir;
     document.documentElement.lang = currentLang;
 
-    // تبديل ملف Bootstrap بناءً على الاتجاه
     const bootstrapLink = document.querySelector('link[href*="bootstrap"]');
     if (currentLang === 'en') {
         bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
@@ -93,24 +95,25 @@ function toggleLanguage() {
         bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css";
     }
 
-    // تحديث نصوص الـ Navbar
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks[0].innerText = t.navHome;
     navLinks[1].innerText = t.navAbout;
     navLinks[2].innerText = t.navProjects;
-    document.getElementById('navbarDropdown').childNodes[0].textContent = t.navSections + " ";
+    if (document.getElementById('navbarDropdown')) {
+        document.getElementById('navbarDropdown').childNodes[0].textContent = t.navSections + " ";
+    }
     navLinks[4].innerText = t.navTestimonials;
-    document.querySelector('.navbar-text').innerText = (currentLang === 'ar' ? "أعتان للمقاولات العامة" : "Aatan General Contracting");
+    
+    const navText = document.querySelector('.navbar-text');
+    if (navText) navText.innerText = (currentLang === 'ar' ? "أعتان للمقاولات العامة" : "Aatan General Contracting");
 
-    // تحديث الـ Hero
     document.querySelector('.hero-section h6').innerText = t.heroSub;
     const scrambleEl = document.querySelector('.text-scramble');
-    scrambleEl.dataset.value = t.heroTitle;
+    if (scrambleEl) scrambleEl.dataset.value = t.heroTitle;
     document.querySelector('.hero-section p').innerText = t.heroDesc;
     document.querySelector('.custom-btn-outline').innerText = t.heroBtn;
     document.querySelector('.hero-section .text-light.small').innerHTML = t.heroContact;
 
-    // تحديث الـ About
     document.querySelector('#about h2').innerText = t.aboutTitle;
     document.querySelectorAll('#about .lead')[0].innerText = t.aboutP1;
     document.querySelectorAll('#about .text-muted')[0].innerText = t.aboutP2;
@@ -118,25 +121,35 @@ function toggleLanguage() {
     document.querySelector('#about .bg-warning h4').innerText = t.missionTitle;
     document.querySelector('#about .text-center h2').innerText = t.servicesTitle;
     
-    // تحديث كروت الخدمات
     const serviceTitles = document.querySelectorAll('.service-card h5');
-    serviceTitles[0].innerText = t.serv1T;
-    serviceTitles[1].innerText = t.serv2T;
-    serviceTitles[2].innerText = t.serv3T;
+    if (serviceTitles.length >= 3) {
+        serviceTitles[0].innerText = t.serv1T;
+        serviceTitles[1].innerText = t.serv2T;
+        serviceTitles[2].innerText = t.serv3T;
+    }
 
-    // تحديث المشاريع والفوتر
     document.querySelector('#projects h2').innerText = t.projectsTitle;
     document.querySelector('#projects p').innerText = t.projectsSub;
+    
+    // تحديث عناوين الأقسام الفرعية الجديدة
+    const infraTitle = document.querySelector('#projects h3:nth-of-type(1)');
+    const contractTitle = document.querySelector('#projects h3:nth-of-type(2)');
+    if (infraTitle) infraTitle.innerText = t.infraTitle;
+    if (contractTitle) contractTitle.innerText = t.contractTitle;
+
     document.querySelector('footer h5').innerText = (currentLang === 'ar' ? "أعتان للمقاولات العامة" : "Aatan General Contracting");
     document.querySelector('footer p.small').innerText = t.footerDesc;
     document.querySelectorAll('footer h5')[1].innerText = t.footerLinks;
-    document.querySelector('footer .text-center p').innerHTML = (currentLang === 'ar' ? "&copy; 2026 جميع الحقوق محفوظة لـ مؤسسة أعتان للمقاولات العامة" : "&copy; 2026 All Rights Reserved - Aatan General Contracting");
+    
+    const copyright = document.querySelector('footer .text-center p');
+    if (copyright) {
+        copyright.innerHTML = (currentLang === 'ar' ? "&copy; 2026 جميع الحقوق محفوظة لـ مؤسسة أعتان للمقاولات العامة" : "&copy; 2026 All Rights Reserved - Aatan General Contracting");
+    }
 
-    // تحديث الموديول
     document.getElementById('projectModalLabel').innerText = t.modalTitle;
-    document.querySelector('.modal-footer button').innerText = t.modalClose;
+    const modalBtn = document.querySelector('.modal-footer button');
+    if (modalBtn) modalBtn.innerText = t.modalClose;
 
-    // تحديث زر اللغة نفسه
     document.getElementById('lang-switch').innerText = t.langBtn;
 
     renderProjects();
@@ -161,21 +174,27 @@ function startScramble() {
     }, 30);
 }
 
-// 5. رسم المشاريع
-const projectTitlesAr = ["تصميم وتنفيذ إنارة الطرق", "أعمال المقاولات العامة", "بنية تحتية متكاملة", "تنفيذ شبكات الجهد المنخفض", "محطة تحويل رئيسية", "صيانة إنارة المطار", "محطات شحن السيارات الكهربائية", "الأعمال الميكانيكية"];
-const projectTitlesEn = ["Road Lighting Design", "General Contracting", "Infrastructure Works", "Low Voltage Networks", "Main Substation", "Airport Maintenance", "EV Charging Stations", "Mechanical Works"];
+// 5. رسم وتوزيع المشاريع
+const projectTitlesAr = ["بنية تحتية متكاملة","تنفيذ شبكات الجهد المتوسط والمنخفض","محطات شحن السيارات الكهربائية","تصميم وتنفيذ إنارة الطرق","الأعمال المدنية (Vision 2030)","الأعمال الميكانيكية", "أعمال التيار الخفيف", "عقود الصيانة  "];
+const projectTitlesEn = ["Infrastructure Works", "Low Voltage Networks","General Contracting","Road Lighting Design", "Civil Works (Vision 2030)", "Mechanical Works", "Low-voltage works","Maintenance contracts"];
 
 function renderProjects() {
-    const grids = document.getElementById('projects-grid');
-    if (!grids) return;
-    grids.innerHTML = ""; 
+    const infraGrid = document.getElementById('infrastructure-grid');
+    const contractGrid = document.getElementById('contracting-grid');
+    
+    if (!infraGrid || !contractGrid) return;
+    
+    infraGrid.innerHTML = ""; 
+    contractGrid.innerHTML = ""; 
+
     const titles = currentLang === 'ar' ? projectTitlesAr : projectTitlesEn;
     const t = translations[currentLang];
 
     for (let i = 1; i <= 8; i++) {
         const title = titles[i - 1];
         const imgSrc = `./Styles/photos/${i}.jpeg`;
-        grids.insertAdjacentHTML('beforeend', `
+        
+        const cardHTML = `
             <div class="col-sm-6 col-lg-4 col-xl-3 project-item" style="opacity:0; transform: translateY(20px); transition: 0.6s">
                 <div class="card h-100 shadow project-card text-white rounded-4 overflow-hidden bg-secondary border-0">
                     <img src="${imgSrc}" class="card-img-top project-img" alt="${title}">
@@ -185,7 +204,13 @@ function renderProjects() {
                         <button class="btn btn-warning btn-sm w-100 fw-bold" onclick="showProjectDetails('${title}', '${imgSrc}')">${t.viewDetails}</button>
                     </div>
                 </div>
-            </div>`);
+            </div>`;
+
+        if (i <= 4) {
+            infraGrid.insertAdjacentHTML('beforeend', cardHTML);
+        } else {
+            contractGrid.insertAdjacentHTML('beforeend', cardHTML);
+        }
     }
     observeProjects();
 }
@@ -210,14 +235,14 @@ function observeProjects() {
     document.querySelectorAll('.project-item').forEach(item => observer.observe(item));
 }
 
-// 6. تشغيل عند التحميل وإضافة زر اللغة
+// 6. تشغيل عند التحميل
 window.onload = () => {
     const navContainer = document.querySelector('.navbar .container');
     if (navContainer && !document.getElementById('lang-switch')) {
         const btn = document.createElement('button');
         btn.id = 'lang-switch';
         btn.className = 'btn btn-outline-warning btn-sm fw-bold rounded-pill px-3 ms-2';
-        btn.innerText = "English";
+        btn.innerText = currentLang === 'ar' ? "English" : "العربية";
         btn.onclick = toggleLanguage;
         navContainer.appendChild(btn);
     }

@@ -182,3 +182,30 @@ h1, h2, h3, .navbar-brand {
 }
 /* Footer End  */
 
+
+/* sticky logo start  */
+/* كلاس مخصص لتثبيت اللوجو في الزاوية */
+.fixed-top-start {
+    position: fixed;
+    top: 80px; /* ليظهر أسفل النافبار */
+    left: 20px; /* أو right: 20px حسب رغبتك */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* تأثير عند تمرير الماوس لجعل الموقع تفاعلي */
+.fixed-top-start:hover {
+    transform: scale(1.1);
+}
+
+/* إذا كان الشعار يغطي النص في الموبايل، نتحكم في ظهوره */
+@media (max-width: 768px) {
+    .fixed-top-start {
+        top: 70px;
+        left: 10px;
+    }
+    .fixed-top-start img {
+        width: 70px !important; /* تصغير الحجم في الجوال */
+    }
+}
+/* sticky logo end  */
+
