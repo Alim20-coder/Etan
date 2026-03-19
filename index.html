@@ -17,7 +17,6 @@
     <a class="navbar-brand m-0" href="#">
       <img src="./Styles/photos/newlogo.png" alt="لوجو إتان" width="150" height="60" style="object-fit: contain;">
     </a>
- 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -25,36 +24,38 @@
 
     <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasNavbar">
       <div class="offcanvas-header border-bottom border-secondary">
-        <h5 class="offcanvas-title">أعتان للمقاولات</h5>
+        <h5 class="offcanvas-title" data-key="companyName">أعتان للمقاولات</h5>
         
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
       </div>
       
       <div class="offcanvas-body">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-          <li class="nav-item"><a class="nav-link active" href="#hero">الرئيسية</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">تعريف بنا</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">مشاريعنا</a></li>
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    أقسامنا
-  </a>
-  <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary shadow-lg text-end" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item py-2" href="./Adds/cars.html">شواحن السيارات الكهربائية</a></li>
-    <li><hr class="dropdown-divider border-secondary"></li>
-    <li><a class="dropdown-item py-2" href="./Adds/enara.html">قسم إنارة الشوارع</a></li>
-    <li><hr class="dropdown-divider border-secondary"></li>
-    <li><a class="dropdown-item py-2" href="./Adds/seyana.html">قسم الصيانة</a></li>
-    <li><hr class="dropdown-divider border-secondary"></li>
-    <li><a class="dropdown-item py-2" href="./Adds/benya.html">البنية التحتية</a></li>
-  </ul>
-</li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">أراء عملائنا</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#hero" data-key="home">الرئيسية</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-key="about">تعريف بنا</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-key="projects">مشاريعنا</a></li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-key="departments">
+              أقسامنا
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary shadow-lg text-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item py-2" href="./Adds/cars.html" data-key="evStations">شواحن السيارات الكهربائية</a></li>
+              <li><hr class="dropdown-divider border-secondary"></li>
+              <li><a class="dropdown-item py-2" href="./Adds/enara.html" data-key="streetLighting">قسم إنارة الشوارع</a></li>
+              <li><hr class="dropdown-divider border-secondary"></li>
+              <li><a class="dropdown-item py-2" href="./Adds/seyana.html" data-key="maintenance">قسم الصيانة</a></li>
+              <li><hr class="dropdown-divider border-secondary"></li>
+              <li><a class="dropdown-item py-2" href="./Adds/benya.html" data-key="infrastructure">البنية التحتية</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item"><a class="nav-link" href="#testimonials" data-key="testimonials">أراء عملائنا</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="navbar-text d-none d-lg-block fw-bold text-white fs-5">
+    <div class="navbar-text d-none d-lg-block fw-bold text-white fs-5" data-key="companyName">
       أعتان للمقاولات العامة
     </div>
 
@@ -62,7 +63,7 @@
 </nav>
     <!-- NavEnd -->
      <!-- Hero Section Start  -->
-      <section id="hero" class="hero-section position-relative overflow-hidden vh-100 d-flex align-items-center justify-content-center text-white">
+<section id="hero" class="hero-section position-relative overflow-hidden vh-100 d-flex align-items-center justify-content-center text-white">
     <div class="hero-bg position-absolute top-0 start-0 w-100 h-100"></div>
     
     <div id="particles-container" class="position-absolute top-0 start-0 w-100 h-100 pointer-events-none"></div>
@@ -70,20 +71,28 @@
     <div class="container position-relative z-3 text-center">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <h6 class="text-uppercase fw-bold mb-3 tracking-widest text-warning animate-up">نحن نبني المستقبل</h6>
-                <h1 class="display-1 fw-bolder mb-4 main-title text-scramble" data-value="أعتان للمقاولات العامة">أعتان للمقاولات العامة</h1>
-                <p class="lead mb-5 opacity-75 fs-4 animate-up-delayed">
+                <h6 class="text-uppercase fw-bold mb-3 tracking-widest text-warning animate-up" data-key="heroSub">
+                    نحن نبني المستقبل
+                </h6>
+
+                <h1 id="hero-title" class="display-1 fw-bolder mb-4 main-title text-scramble" 
+                    data-key="heroTitle" 
+                    data-value="أعتان للمقاولات العامة">
+                    أعتان للمقاولات العامة
+                </h1>
+
+                <p class="lead mb-5 opacity-75 fs-4 animate-up-delayed" data-key="heroLead">
                     حلول هندسية مبتكرة في البنية التحتية، إنارة الشوارع، وشواحن السيارات الكهربائية.
                 </p>
-                <div class="d-flex justify-content-center gap-3 animate-up-more">
-<div class="d-flex flex-column align-items-center text-center">
-   <a href="tel:+966558815915"  
-   class="btn btn-outline-light btn-lg px-5 py-3 fw-bold rounded-pill custom-btn-outline mb-3">
-    <i class="fas fa-phone-alt me-2"></i> تواصل معنا
-</a>
-    
 
-</div>            </div>
+                <div class="d-flex justify-content-center gap-3 animate-up-more">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <a href="tel:+966558815915" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold rounded-pill custom-btn-outline mb-3">
+                            <i class="fas fa-phone-alt me-2"></i> 
+                            <span data-key="contactUs">تواصل معنا</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -91,15 +100,15 @@
      <!-- Hero Section End  -->
 
      <!-- Second Section Star  -->
-      <section id="about" class="py-5 bg-light">
+<section id="about" class="py-5 bg-light">
     <div class="container">
         <div class="row align-items-center mb-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
-                <h2 class="fw-bold mb-4 border-bottom border-warning border-4 d-inline-block pb-2">تعريف بنا</h2>
-                <p class="lead text-secondary">
+                <h2 class="fw-bold mb-4 border-bottom border-warning border-4 d-inline-block pb-2" data-key="aboutTitle">تعريف بنا</h2>
+                <p class="lead text-secondary" data-key="aboutLead">
                     مؤسسة أعتان للمقاولات العامة هي شركة متخصصة في تنفيذ أعمال المقاولات العامة والأعمال الكهربائية، وتسعى إلى تقديم خدمات عالية الجودة وفق أفضل المعايير الفنية والهندسية.
                 </p>
-                <p class="text-muted">
+                <p class="text-muted" data-key="aboutText">
                     نلتزم في الشركة بتقديم حلول هندسية متكاملة تلبي احتياجات عملائنا في مشاريع البنية التحتية وأعمال الكهرباء، مع التركيز على الجودة والالتزام بالمواعيد والسلامة المهنية.
                 </p>
             </div>
@@ -107,14 +116,14 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm p-3 text-center bg-dark text-white">
-                            <h4 class="text-warning">رؤيتنا</h4>
-                            <p class="small">أن نكون من الشركات الرائدة في المملكة من خلال الخبرة والكفاءة والجودة.</p>
+                            <h4 class="text-warning" data-key="visionTitle">رؤيتنا</h4>
+                            <p class="small" data-key="visionText">أن نكون من الشركات الرائدة في المملكة من خلال الخبرة والكفاءة والجودة.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card h-100 border-0 shadow-sm p-3 text-center bg-warning text-dark">
-                            <h4 class="fw-bold">رسالتنا</h4>
-                            <p class="small">تقديم خدمات متكاملة وبناء علاقات قائمة على الثقة والاحترافية.</p>
+                            <h4 class="fw-bold" data-key="missionTitle">رسالتنا</h4>
+                            <p class="small" data-key="missionText">تقديم خدمات متكاملة وبناء علاقات قائمة على الثقة والاحترافية.</p>
                         </div>
                     </div>
                 </div>
@@ -122,30 +131,30 @@
         </div>
 
         <div class="text-center mb-5 pt-5">
-            <h2 class="fw-bold">خدماتنا</h2>
-            <p class="text-muted">نقدم حلولاً هندسية شاملة بأعلى المعايير</p>
+            <h2 class="fw-bold" data-key="servicesTitle">خدماتنا</h2>
+            <p class="text-muted" data-key="servicesSub">نقدم حلولاً هندسية شاملة بأعلى المعايير</p>
         </div>
 
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="service-card shadow-sm p-4 text-center bg-white h-100">
                     <div class="icon-box mb-3"><i class="bi bi-lightning-charge fs-1 text-warning"></i></div>
-                    <h5>الأعمال الكهربائية</h5>
-                    <p class="text-muted small">تنفيذ الأعمال الكهربائية للمشاريع وتمديد الكابلات الأرضية وصيانة الشبكات.</p>
+                    <h5 data-key="elecWorks">الأعمال الكهربائية</h5>
+                    <p class="text-muted small" data-key="elecDesc">تنفيذ الأعمال الكهربائية للمشاريع وتمديد الكابلات الأرضية وصيانة الشبكات.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="service-card shadow-sm p-4 text-center bg-white h-100">
                     <div class="icon-box mb-3"><i class="bi bi-lightbulb fs-1 text-warning"></i></div>
-                    <h5>إنارة الشوارع</h5>
-                    <p class="text-muted small">متخصصون في توريد وتركيب وصيانة أنظمة إنارة الشوارع والطرق بأحدث التقنيات.</p>
+                    <h5 data-key="lightingTitle">إنارة الشوارع</h5>
+                    <p class="text-muted small" data-key="lightingDesc">متخصصون في توريد وتركيب وصيانة أنظمة إنارة الشوارع والطرق بأحدث التقنيات.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="service-card shadow-sm p-4 text-center bg-white h-100">
                     <div class="icon-box mb-3"><i class="bi bi-building fs-1 text-warning"></i></div>
-                    <h5>المقاولات العامة</h5>
-                    <p class="text-muted small">تنفيذ مشاريع البنية التحتية والمقاولات العامة وفق الجداول الزمنية المحددة.</p>
+                    <h5 data-key="contractingTitle">المقاولات العامة</h5>
+                    <p class="text-muted small" data-key="contractingDesc">تنفيذ مشاريع البنية التحتية والمقاولات العامة وفق الجداول الزمنية المحددة.</p>
                 </div>
             </div>
         </div>
@@ -153,16 +162,16 @@
         <div class="mt-5 p-4 bg-dark text-white rounded-4 shadow-lg">
             <div class="row">
                 <div class="col-md-7 border-end border-secondary">
-                    <h4 class="text-warning mb-3">التزامنا</h4>
+                    <h4 class="text-warning mb-3" data-key="commitmentTitle">التزامنا</h4>
                     <ul class="list-unstyled">
-                        <li><i class="bi bi-check2-circle text-warning me-2"></i> الالتزام بمعايير الجودة والسلامة</li>
-                        <li><i class="bi bi-check2-circle text-warning me-2"></i> استخدام أحدث التقنيات والمعدات</li>
-                        <li><i class="bi bi-check2-circle text-warning me-2"></i> تحقيق رضا العملاء التام</li>
+                        <li><i class="bi bi-check2-circle text-warning me-2"></i> <span data-key="commitment1">الالتزام بمعايير الجودة والسلامة</span></li>
+                        <li><i class="bi bi-check2-circle text-warning me-2"></i> <span data-key="commitment2">استخدام أحدث التقنيات والمعدات</span></li>
+                        <li><i class="bi bi-check2-circle text-warning me-2"></i> <span data-key="commitment3">تحقيق رضا العملاء التام</span></li>
                     </ul>
                 </div>
                 <div class="col-md-5 ps-md-4">
-                    <h4 class="text-warning mb-3">تواصل معنا</h4>
-                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i> الرياض – شارع أبي بكر الصديق</p>
+                    <h4 class="text-warning mb-3" data-key="contactTitle">تواصل معنا</h4>
+                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i> <span data-key="address">الرياض – شارع أبي بكر الصديق</span></p>
                     <p class="mb-1"><i class="bi bi-telephone me-2"></i> 0558815915 / 0550011567</p>
                 </div>
             </div>
@@ -171,20 +180,19 @@
 </section>
      <!-- Second Section End  -->
       <!-- Three Section Start  -->
-<section id="projects" class="py-5 bg-dark overflow-hidden" dir="rtl">
+<section id="projects" class="py-5 bg-dark overflow-hidden">
     <div class="container">
         <div class="text-center mb-5 text-white">
-            <h2 class="fw-bold text-warning">مشاريعنا</h2>
-            <p class="opacity-75">فخورون بتنفيذ أضخم المشاريع بأعلى معايير الجودة</p>
+            <h2 class="fw-bold text-warning" data-key="projectsTitle">مشاريعنا</h2>
+            <p class="opacity-75" data-key="projectsHeaderDesc">فخورون بتنفيذ أضخم المشاريع بأعلى معايير الجودة</p>
         </div>
 
         <div class="mb-5">
             <div class="d-flex align-items-center mb-4 text-white">
                 <div class="bg-warning me-3" style="width: 5px; height: 30px; border-radius: 2px;"></div>
-                <h3 class="fw-bold m-0 fs-4">أعمال البنية التحتية المتكاملة :-</h3>
+                <h3 class="fw-bold m-0 fs-4" data-key="infraTitle">أعمال البنية التحتية المتكاملة :-</h3>
             </div>
-            <div class="row g-4" id="infrastructure-grid">
-                </div>
+            <div class="row g-4" id="infrastructure-grid"></div>
         </div>
 
         <div class="py-4">
@@ -194,24 +202,21 @@
         <div>
             <div class="d-flex align-items-center mb-4 text-white">
                 <div class="bg-warning me-3" style="width: 5px; height: 30px; border-radius: 2px;"></div>
-                <h3 class="fw-bold m-0 fs-4"> أعمال المقاولات العامة :-</h3>
+                <h3 class="fw-bold m-0 fs-4" data-key="generalContracting">أعمال المقاولات العامة :-</h3>
             </div>
-            <div class="row g-4" id="contracting-grid">
-                </div>
+            <div class="row g-4" id="contracting-grid"></div>
         </div>
     </div>
 </section>
 
      
-</section>
-
       <!-- Three Section End  -->
        <!-- Four section start  -->
-        <section id="testimonials" class="py-5 bg-light overflow-hidden">
+<section id="testimonials" class="py-5 bg-light overflow-hidden">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold">قالوا عن أعتان</h2>
-            <p class="text-muted">نعتز بثقة عملائنا ونسعى دائماً للأفضل</p>
+            <h2 class="fw-bold" data-key="testiMainTitle">قالوا عن أعتان</h2>
+            <p class="text-muted" data-key="testiSub">نعتز بثقة عملائنا ونسعى دائماً للأفضل</p>
         </div>
 
         <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
@@ -220,27 +225,27 @@
                 <div class="carousel-item active">
                     <div class="testimonial-card shadow-sm mx-auto p-5 bg-white rounded-4 text-center">
                         <div class="quote-icon mb-4"><i class="bi bi-quote fs-1 text-warning"></i></div>
-                        <p class="fs-5 mb-4 text-dark italic">"الاحترافية في التنفيذ والالتزام بالمواعيد كان مبهراً. شركة أعتان شريك حقيقي في النجاح."</p>
-                        <h6 class="fw-bold mb-0">المهندس أحمد الرميح</h6>
-                        <small class="text-warning">مدير مشاريع - الرياض</small>
+                        <p class="fs-5 mb-4 text-dark italic" data-key="test1Text">"الاحترافية في التنفيذ والالتزام بالمواعيد كان مبهراً. شركة أعتان شريك حقيقي في النجاح."</p>
+                        <h6 class="fw-bold mb-0" data-key="test1Name">المهندس أحمد الرميح</h6>
+                        <small class="text-warning" data-key="test1Job">مدير مشاريع - الرياض</small>
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <div class="testimonial-card shadow-sm mx-auto p-5 bg-white rounded-4 text-center">
                         <div class="quote-icon mb-4"><i class="bi bi-quote fs-1 text-warning"></i></div>
-                        <p class="fs-5 mb-4 text-dark">"جودة الأعمال الكهربائية في مشاريعنا الأخيرة كانت فوق التوقعات، فريق عمل متمكن تقنياً."</p>
-                        <h6 class="fw-bold mb-0">أ/ خالد العتيبي</h6>
-                        <small class="text-warning">مؤسسة العتيبي للمقاولات</small>
+                        <p class="fs-5 mb-4 text-dark" data-key="test2Text">"جودة الأعمال الكهربائية في مشاريعنا الأخيرة كانت فوق التوقعات، فريق عمل متمكن تقنياً."</p>
+                        <h6 class="fw-bold mb-0" data-key="test2Name">أ/ خالد العتيبي</h6>
+                        <small class="text-warning" data-key="test2Job">مؤسسة العتيبي للمقاولات</small>
                     </div>
                 </div>
 
                 <div class="carousel-item">
                     <div class="testimonial-card shadow-sm mx-auto p-5 bg-white rounded-4 text-center">
                         <div class="quote-icon mb-4"><i class="bi bi-quote fs-1 text-warning"></i></div>
-                        <p class="fs-5 mb-4 text-dark">"التزام كامل بمعايير السلامة المهنية وسرعة في إنجاز أعمال البنية التحتية."</p>
-                        <h6 class="fw-bold mb-0">المهندس/ على مصطفي</h6>
-                        <small class="text-warning">استشاري مشاريع</small>
+                        <p class="fs-5 mb-4 text-dark" data-key="test3Text">"التزام كامل بمعايير السلامة المهنية وسرعة في إنجاز أعمال البنية التحتية."</p>
+                        <h6 class="fw-bold mb-0" data-key="test3Name">المهندس/ علي مصطفى</h6>
+                        <small class="text-warning" data-key="test3Job">استشاري مشاريع</small>
                     </div>
                 </div>
 
@@ -266,8 +271,8 @@
         <div class="row g-4">
             
             <div class="col-lg-4">
-                <h5 class="fw-bold text-warning mb-4">أعتان للمقاولات العامة</h5>
-                <p class="small opacity-75">
+                <h5 class="fw-bold text-warning mb-4" data-key="footerCompanyName">أعتان للمقاولات العامة</h5>
+                <p class="small opacity-75" data-key="footerDesc">
                     مؤسسة رائدة في المملكة العربية السعودية، متخصصون في تنفيذ مشاريع البنية التحتية، الإنارة، والأعمال الكهربائية بأعلى معايير الجودة والسلامة.
                 </p>
                 <div class="d-flex gap-3 mt-4">
@@ -279,20 +284,20 @@
             </div>
 
             <div class="col-lg-2 offset-lg-1">
-                <h5 class="fw-bold text-warning mb-4">روابط سريعة</h5>
+                <h5 class="fw-bold text-warning mb-4" data-key="quickLinks">روابط سريعة</h5>
                 <ul class="list-unstyled footer-links">
-                    <li><a href="#" class="text-decoration-none text-white-50 d-block mb-2">الرئيسية</a></li>
-                    <li><a href="#about" class="text-decoration-none text-white-50 d-block mb-2">تعريف بنا</a></li>
-                    <li><a href="#projects" class="text-decoration-none text-white-50 d-block mb-2">مشاريعنا</a></li>
-                    <li><a href="#" class="text-decoration-none text-white-50 d-block mb-2">أقسامنا</a></li>
+                    <li><a href="#" class="text-decoration-none text-white-50 d-block mb-2" data-key="home">الرئيسية</a></li>
+                    <li><a href="#about" class="text-decoration-none text-white-50 d-block mb-2" data-key="about">تعريف بنا</a></li>
+                    <li><a href="#projects" class="text-decoration-none text-white-50 d-block mb-2" data-key="projects">مشاريعنا</a></li>
+                    <li><a href="#" class="text-decoration-none text-white-50 d-block mb-2" data-key="departments">أقسامنا</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-5">
-                <h5 class="fw-bold text-warning mb-4">معلومات التواصل</h5>
+                <h5 class="fw-bold text-warning mb-4" data-key="contactInfo">معلومات التواصل</h5>
                 <div class="d-flex mb-3">
                     <i class="bi bi-geo-alt-fill text-warning me-3 fs-5"></i>
-                    <p class="mb-0">الرياض – شارع أبي بكر الصديق – المملكة العربية السعودية</p>
+                    <p class="mb-0" data-key="fullAddress">الرياض – شارع أبي بكر الصديق – المملكة العربية السعودية</p>
                 </div>
                 <div class="d-flex mb-3">
                     <i class="bi bi-telephone-fill text-warning me-3 fs-5"></i>
@@ -312,28 +317,34 @@
         <hr class="my-5 opacity-25">
 
         <div class="text-center">
-            <p class="small mb-0 opacity-50">&copy; 2026 جميع الحقوق محفوظة لـ مؤسسة أعتان للمقاولات العامة</p>
+            <p class="small mb-0 opacity-50" data-key="allRights">&copy; 2026 جميع الحقوق محفوظة لـ مؤسسة أعتان للمقاولات العامة</p>
         </div>
     </div>
 </footer>
         <!-- Fouter End  -->
-<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true" dir="rtl">
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content bg-dark text-white border-warning" style="border-width: 2px;">
+      
       <div class="modal-header border-secondary">
-        <h5 class="modal-title text-warning fw-bold" id="projectModalLabel">تفاصيل المشروع</h5>
+        <h5 class="modal-title text-warning fw-bold" id="projectModalLabel" data-key="viewDetails">تفاصيل المشروع</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
       <div class="modal-body text-center">
         <img id="modalImg" src="" class="img-fluid rounded-4 mb-4 shadow-lg border border-secondary" alt="Project Image" style="max-height: 200px; width: 60%; object-fit: cover;">
+        
         <h3 id="modalTitle" class="fw-bold text-warning mb-3"></h3>
-        <p id="modalDescription" class="fs-5 opacity-75">
+        
+        <p id="modalDescription" class="fs-5 opacity-75" data-key="modalDefaultDesc">
           هذا المشروع تم تنفيذه بأعلى معايير الجودة والدقة المطلوبة في المملكة العربية السعودية، مع مراعاة كافة شروط السلامة والمهنية.
         </p>
       </div>
+
       <div class="modal-footer border-secondary">
-        <button type="button" class="btn btn-outline-warning px-4" data-bs-dismiss="modal">إغلاق</button>
+        <button type="button" class="btn btn-outline-warning px-4" data-bs-dismiss="modal" data-key="close">إغلاق</button>
       </div>
+      
     </div>
   </div>
 </div>
